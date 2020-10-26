@@ -1,0 +1,10 @@
+github.com/hypebeast/go-osc v0.0.0-20200115085105-85fee7fed692 h1:a5rmrg0wd6LLuRQGk9lopHHgzyjM8DjH0Ek0iHki5Lc=
+github.com/hypebeast/go-osc v0.0.0-20200115085105-85fee7fed692/go.mod h1:VCiuhv+/+jPFqHeZAgVC61Cr4drPso5XEEKmEiqCsuU=
+github.com/schollz/logger v1.2.0 h1:5WXfINRs3lEUTCZ7YXhj0uN+qukjizvITLm3Ca2m0Ho=
+github.com/schollz/logger v1.2.0/go.mod h1:P6F4/dGMGcx8wh+kG1zrNEd4vnNpEBY/mwEMd/vn6AM=
+gitlab.com/gomidi/midi v1.16.4 h1:Cl2HrJh+ww7ivNlxyKbhEI7q3j9nqv7y/FF+8KFwz3s=
+gitlab.com/gomidi/midi v1.16.4/go.mod h1:3ohtNOhqoSakkuLG/Li1OI6I3J1c2LErnJF5o/VBq1c=
+gitlab.com/gomidi/rtmididrv v0.10.1 h1:BgqhFpBgythJqFbiR8QtL3CER1nh26YCUPFGVidS9gk=
+gitlab.com/gomidi/rtmididrv v0.10.1/go.mod h1:sBxBDsJKVhinLt+kk7fj6WfKRCmnFzFSkFY1chDNLbw=
+gitlab.com/gomidi/rtmididrv/imported/rtmidi v0.0.0-20191025100939-514fe0ed97a6 h1:0XqAH/BAxH5TTBzIWkdlZqpp6VUx6DFcQnMWW6G6hIc=
+gitlab.com/gomidi/rtmididrv/imported/rtmidi v0.0.0-20191025100939-514fe0ed97a6/go.mod h1:FYVFN2H23IsX56VntiDF9DgCIekHh359wW+iMl1W8rQ=
