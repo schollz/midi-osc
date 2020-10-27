@@ -111,6 +111,9 @@ func main() {
 					normValue := float32(data[2]) / 127
 					midi := int(data[1])
 					log.Tracef("midi: %+v", midi)
+					if time.Since(limiter) < 50*time.Millisecond {
+						return
+					}
 					for ie, e := range config.Events {
 						finished := func(e Event, midi int, val float32) bool {
 							if e.Midi != midi {
@@ -142,8 +145,8 @@ func main() {
 								}
 								log.Tracef("msg: %+v", msg)
 								if time.Since(limiter) > 50*time.Millisecond {
-
 									client.Send(msg)
+									time.Sleep(500 * time.Millisecond)
 									limiter = time.Now()
 								}
 							}
