@@ -1,6 +1,6 @@
 {
   "port":10111,
-  "server":"localhost",
+  "server":"192.168.0.82",
   "events":[
      {
         "button":true,
@@ -103,6 +103,7 @@
         "count":6,
         "osc":[
            {
+            "int32":true,
               "msg":"/param/Xrate",
               "toggle":[
                  3,
@@ -119,11 +120,9 @@
         "count":6,
         "osc":[
            {
+            "int32":true,
               "msg":"/param/Xrecording init",
-              "toggle":[
-                 3,
-                 1
-              ]
+              "data":2
            }
         ]
      }

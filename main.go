@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"strings"
+	"time"
 
 	"github.com/hypebeast/go-osc/osc"
 	osclib "github.com/hypebeast/go-osc/osc"
@@ -94,6 +95,7 @@ func main() {
 
 	log.Trace("opening client")
 	client := osc.NewClient(config.Server, config.Port)
+	limiter := time.Now()
 	log.Trace("client opened")
 	for i := range ins {
 		err = ins[i].Open()
@@ -139,7 +141,11 @@ func main() {
 									msg.Append(float32(val))
 								}
 								log.Tracef("msg: %+v", msg)
-								client.Send(msg)
+								if time.Since(limiter) > 50*time.Millisecond {
+
+									client.Send(msg)
+									limiter = time.Now()
+								}
 							}
 							return true
 						}(e, midi, normValue)
