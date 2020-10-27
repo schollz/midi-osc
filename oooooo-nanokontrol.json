@@ -1,0 +1,62 @@
+{
+  "server": "localhost",
+  "port": 10111,
+  "events": [
+    {
+      "comment": "turning on compressor",
+      "midi": 38,
+      "button": true,
+      "osc": [
+        {
+          "msg": "/param/compressor",
+          "int32": 127
+        },
+        {
+          "msg": "/param/comp_mix",
+          "float32": 1
+        }
+      ]
+    },
+    {
+      "comment": "turning off compressor",
+      "midi": 54,
+      "button": true,
+      "osc": [
+        {
+          "msg": "/param/compressor",
+          "int32": 0
+        }
+      ]
+    },
+    {
+      "comment": "turning on reverb",
+      "midi": 39,
+      "button": true,
+      "osc": [
+        {
+          "msg": "/param/reverb",
+          "int32": 127
+        },
+        {
+          "msg": "/param/rev_monitor_input",
+          "float32": -9
+        },
+        {
+          "msg": "/param/rev_return_level",
+          "float32": 6
+        }
+      ]
+    },
+    {
+      "comment": "turning off reverb",
+      "midi": 55,
+      "button": true,
+      "osc": [
+        {
+          "msg": "/param/reverb",
+          "int32": 0
+        }
+      ]
+    }
+  ]
+}

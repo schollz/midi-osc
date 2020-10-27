@@ -6,6 +6,26 @@ import (
 	driver "gitlab.com/gomidi/rtmididrv"
 )
 
+type Config struct {
+	Server string  `json:"server"`
+	Port   int     `json:"port"`
+	Events []Event `json:"events"`
+}
+
+type Event struct {
+	Comment string     `json:"comment"`
+	Midi    int        `json:"midi"`
+	Button  bool       `json:"button,omitempty"`
+	OSC     []EventOSC `json:"osc"`
+}
+type EventOSC struct {
+	Msg      string    `json:"msg"`
+	Int32    int       `json:"int32,omitempty"`
+	Float32  float32   `json:"float32,omitempty"`
+	DataNorm bool      `json:"data_norm,omitempty"`
+	Bounds   []float32 `json:"bounds,omitempty"`
+}
+
 func main() {
 	drv, err := driver.New()
 	if err != nil {

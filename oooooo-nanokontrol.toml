@@ -1,0 +1,81 @@
+server = "localhost"
+port = 10_111
+
+[[events]]
+comment = "turning on compressor"
+midi = 38
+button = true
+
+  [[events.osc]]
+  msg = "/param/compressor"
+  int32 = 127
+
+  [[events.osc]]
+  msg = "/param/comp_mix"
+  float32 = 1
+
+[[events]]
+comment = "turning off compressor"
+midi = 54
+button = true
+
+  [[events.osc]]
+  msg = "/param/compressor"
+  int32 = 0
+
+[[events]]
+comment = "turning on reverb"
+midi = 39
+button = true
+
+  [[events.osc]]
+  msg = "/param/reverb"
+  int32 = 127
+
+  [[events.osc]]
+  msg = "/param/rev_monitor_input"
+  float32 = -9
+
+  [[events.osc]]
+  msg = "/param/rev_return_level"
+  float32 = 6
+
+[[events]]
+comment = "turning off reverb"
+midi = 55
+button = true
+
+  [[events.osc]]
+  msg = "/param/reverb"
+  int32 = 0
+
+[[events]]
+comment = "level"
+midi = 25
+midi_add = 7
+number = 6
+
+  [[events.osc]]
+  msg = "/param/Xlevel"
+  bounds = [0,1]
+
+[[events]]
+comment = "pan"
+midi = 25
+midi_add = 8
+num = 6
+
+  [[events.osc]]
+  msg = "param/Xpan"
+  bounds = [-1,1]
+
+[[events]]
+comment = "flip"
+button = true
+midi = 25
+midi_add = 8
+num = 6
+
+  [[events.osc]]
+  msg = "param/Xrate"
+  toggle = [-1,1]
