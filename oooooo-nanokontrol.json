@@ -1,62 +1,131 @@
 {
-  "server": "localhost",
-  "port": 10111,
-  "events": [
-    {
-      "comment": "turning on compressor",
-      "midi": 38,
-      "button": true,
-      "osc": [
-        {
-          "msg": "/param/compressor",
-          "int32": 127
-        },
-        {
-          "msg": "/param/comp_mix",
-          "float32": 1
-        }
-      ]
-    },
-    {
-      "comment": "turning off compressor",
-      "midi": 54,
-      "button": true,
-      "osc": [
-        {
-          "msg": "/param/compressor",
-          "int32": 0
-        }
-      ]
-    },
-    {
-      "comment": "turning on reverb",
-      "midi": 39,
-      "button": true,
-      "osc": [
-        {
-          "msg": "/param/reverb",
-          "int32": 127
-        },
-        {
-          "msg": "/param/rev_monitor_input",
-          "float32": -9
-        },
-        {
-          "msg": "/param/rev_return_level",
-          "float32": 6
-        }
-      ]
-    },
-    {
-      "comment": "turning off reverb",
-      "midi": 55,
-      "button": true,
-      "osc": [
-        {
-          "msg": "/param/reverb",
-          "int32": 0
-        }
-      ]
-    }
+  "port":10111,
+  "server":"localhost",
+  "events":[
+     {
+        "button":true,
+        "comment":"turning on compressor",
+        "midi":38,
+        "osc":[
+           {
+              "data":127,
+              "int32":true,
+              "msg":"/param/compressor"
+           },
+           {
+              "data":1,
+              "float32":true,
+              "msg":"/param/comp_mix"
+           }
+        ]
+     },
+     {
+        "button":true,
+        "comment":"turning off compressor",
+        "midi":54,
+        "osc":[
+           {
+              "data":0,
+              "int32":true,
+              "msg":"/param/compressor"
+           }
+        ]
+     },
+     {
+        "button":true,
+        "comment":"turning on reverb",
+        "midi":39,
+        "osc":[
+           {
+              "data":127,
+              "int32":true,
+              "msg":"/param/reverb"
+           },
+           {
+              "data":-9,
+              "float32":true,
+              "msg":"/param/rev_monitor_input"
+           },
+           {
+              "data":6,
+              "float32":true,
+              "msg":"/param/rev_return_level"
+           }
+        ]
+     },
+     {
+        "button":true,
+        "comment":"turning off reverb",
+        "midi":55,
+        "osc":[
+           {
+              "data":0,
+              "int32":true,
+              "msg":"/param/reverb"
+           }
+        ]
+     },
+     {
+        "comment":"volume",
+        "midi":0,
+        "midi_add":1,
+        "count":6,
+        "osc":[
+           {
+              "bounds":[
+                 0,
+                 1
+              ],
+              "msg":"/param/Xvol"
+           }
+        ]
+     },
+     {
+        "comment":"pan",
+        "midi":16,
+        "midi_add":1,
+        "count":6,
+        "osc":[
+           {
+              "bounds":[
+                 -1,
+                 1
+              ],
+              "msg":"/param/Xpan"
+           }
+        ]
+     },
+     {
+        "button":true,
+        "comment":"flip rate",
+        "midi":32,
+        "midi_add":1,
+        "count":6,
+        "osc":[
+           {
+              "msg":"/param/Xrate",
+              "toggle":[
+                 3,
+                 8
+              ]
+           }
+        ]
+     },
+     {
+        "button":true,
+        "comment":"rec toggle",
+        "midi":48,
+        "midi_add":1,
+        "count":6,
+        "osc":[
+           {
+              "msg":"/param/Xrecording init",
+              "toggle":[
+                 3,
+                 1
+              ]
+           }
+        ]
+     }
   ]
 }

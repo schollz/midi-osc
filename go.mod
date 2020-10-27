@@ -1,6 +1,6 @@
 module github.com/schollz/midi-osc
 
-go 1.15
+go 1.14
 
 require (
 	github.com/hypebeast/go-osc v0.0.0-20200115085105-85fee7fed692

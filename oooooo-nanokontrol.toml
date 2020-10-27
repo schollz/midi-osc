@@ -8,11 +8,13 @@ button = true
 
   [[events.osc]]
   msg = "/param/compressor"
-  int32 = 127
+  data = 127
+  int32 = true
 
   [[events.osc]]
   msg = "/param/comp_mix"
-  float32 = 1
+  data = 1
+  float32 = true
 
 [[events]]
 comment = "turning off compressor"
@@ -21,7 +23,8 @@ button = true
 
   [[events.osc]]
   msg = "/param/compressor"
-  int32 = 0
+  int32 = true
+  data = 0
 
 [[events]]
 comment = "turning on reverb"
@@ -30,15 +33,18 @@ button = true
 
   [[events.osc]]
   msg = "/param/reverb"
-  int32 = 127
+  int32 = true
+  data = 127 
 
   [[events.osc]]
   msg = "/param/rev_monitor_input"
-  float32 = -9
+  float32 = true
+  data = -9
 
   [[events.osc]]
   msg = "/param/rev_return_level"
-  float32 = 6
+  data = 6
+  float32 = true
 
 [[events]]
 comment = "turning off reverb"
@@ -47,7 +53,8 @@ button = true
 
   [[events.osc]]
   msg = "/param/reverb"
-  int32 = 0
+  int32 = true 
+  data = 0
 
 [[events]]
 comment = "level"
